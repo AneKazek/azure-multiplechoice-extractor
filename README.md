@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)  
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**Programz** adalah kumpulan skrip Python canggih untuk:
+**Azure Multiple Choice Extractor** adalah skrip Python canggih untuk:
 - 📄 **Menganalisis dokumen** dengan Azure AI Document Intelligence  
 - ✍️ **Mendeteksi jawaban** dari lembar jawaban ujian secara otomatis  
 
@@ -14,7 +14,7 @@
 
 ```
 
-Programz/
+Azure Multiple Choice Extractor/
 ├── LICENSE
 ├── README.md
 ├── test.py
@@ -135,7 +135,4 @@ print("Jawaban siswa:", jawaban)
 Proyek ini dilisensikan di bawah MIT License.
 Lihat file [LICENSE](LICENSE) untuk detail.
 
-```
-
-Dengan struktur dan penjelasan di atas, README Anda akan lebih menarik, mudah dipahami, dan siap dipakai oleh kontributor baru. Semoga membantu!
 ```
