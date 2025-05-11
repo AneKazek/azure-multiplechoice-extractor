@@ -21,7 +21,7 @@ endpoint = os.getenv("AZURE_ENDPOINT")
 key = os.getenv("AZURE_KEY")
 
 # Ganti path di bawah ini dengan path file gambar di laptop Anda
-local_file_path = r"C:\Users\ASUS\Downloads\WhatsApp Image 2025-05-11 at 12.13.32_6349cd26.jpg"
+local_file_path = r"FILE_LOCATION"
 
 with open(local_file_path, "rb") as f:
     file_bytes = f.read()
