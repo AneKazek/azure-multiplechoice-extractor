@@ -1,5 +1,3 @@
-Berikut adalah contoh **README.md** yang lebih menarik, informatif, dan terstruktur untuk proyek Anda:
-
 ```markdown
 # 🚀 Programz
 
