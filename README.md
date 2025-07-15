@@ -40,8 +40,8 @@ Azure Multiple Choice Extractor/
 
 1. **Clone** the repository:
    ```bash
-   git clone https://github.com/username/Programz.git
-   cd Programz
+   git clone https://github.com/AneKazek/azure-multiplechoice-extractor.git
+   cd azure-multiplechoice-extractor
    ```
 
 2. **Create a virtual environment** (optional but recommended):
