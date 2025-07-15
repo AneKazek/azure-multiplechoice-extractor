@@ -1,51 +1,51 @@
 ```markdown
 # 🚀 Azure Multiple Choice Extractor
 
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)  
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) 
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=azure&logoColor=white)](https://azure.microsoft.com/)
+[![Azure AI Document Intelligence](https://img.shields.io/badge/Azure%20AI%20Document%20Intelligence-0078D4?style=for-the-badge&logo=azure&logoColor=white)](https://azure.microsoft.com/en-us/services/cognitive-services/document-intelligence/)
 
-**Azure Multiple Choice Extractor** adalah skrip Python canggih untuk:
-- 📄 **Menganalisis dokumen** dengan Azure AI Document Intelligence  
-- ✍️ **Mendeteksi jawaban** dari lembar jawaban ujian secara otomatis  
+**Azure Multiple Choice Extractor** is an advanced Python script designed for:
+- 📄 **Document Analysis** using Azure AI Document Intelligence
+- ✍️ **Automated Answer Detection** from exam answer sheets
 
 ---
 
-## 📂 Struktur Proyek
+## 📂 Project Structure
 
 ```
-
 Azure Multiple Choice Extractor/
 ├── LICENSE
 ├── README.md
 ├── test.py
-└── get\_jawaban\_himpunan.py
+└── get_jawaban_himpunan.py
+```
 
-````
-
-- **test.py**  
-  Menunjukkan contoh alur kerja: ekstraksi teks & layout dari dokumen, lalu deteksi jawaban ujian.  
-- **get_jawaban_himpunan.py**  
-  Implementasi fungsi `get_jawaban_himpunan()` untuk memperoleh jawaban siswa dengan pendekatan himpunan.
+- **test.py**
+  Demonstrates the workflow: text & layout extraction from documents, followed by exam answer detection.
+- **get_jawaban_himpunan.py**
+  Implements the `get_jawaban_himpunan()` function to obtain student answers using a set-based approach.
 
 ---
 
-## 🔧 Prasyarat
+## 🔧 Prerequisites
 
-- Python 3.8 atau lebih baru  
-- Akun & API Key Azure Cognitive Services  
+- Python 3.8 or newer
+- Azure Cognitive Services Account & API Key
 - Azure AI Document Intelligence SDK
 
 ---
 
-## 🚀 Instalasi
+## 🚀 Installation
 
-1. **Clone** repositori:  
+1. **Clone** the repository:
    ```bash
    git clone https://github.com/username/Programz.git
    cd Programz
-````
+   ```
 
-2. **Buat virtual environment** (opsional tapi direkomendasikan):
+2. **Create a virtual environment** (optional but recommended):
 
    ```bash
    python -m venv venv
@@ -60,79 +60,79 @@ Azure Multiple Choice Extractor/
 
 ---
 
-## ⚙️ Konfigurasi
+## ⚙️ Configuration
 
-1. Buat file `.env` di root proyek:
+1. Create a `.env` file in the project root:
 
    ```text
    AZURE_ENDPOINT=https://<your-resource-name>.cognitiveservices.azure.com/
    AZURE_API_KEY=<your-api-key>
    ```
-2. Pastikan variabel environment sudah ter-load (bila menggunakan virtualenv, jalankan `source .env`).
+2. Ensure environment variables are loaded (if using a virtualenv, run `source .env`).
 
 ---
 
-## 🎯 Cara Menggunakan
+## 🎯 How to Use
 
-1. **Analisis Dokumen**
+1. **Document Analysis**
 
    ```bash
    python test.py --input path/to/document.pdf
    ```
 
-   * Output: struktur layout & teks terdeteksi di console.
+   * Output: detected layout structure & text in the console.
 
-2. **Deteksi Jawaban Ujian**
+2. **Exam Answer Detection**
 
    ```bash
    python get_jawaban_himpunan.py --input path/to/answer-sheet.pdf
    ```
 
-   * Output: daftar jawaban siswa berdasarkan nomor soal.
+   * Output: list of student answers based on question numbers.
 
 ---
 
-## 🛠️ Contoh Kode
+## 🛠️ Code Example
 
 ```python
 from azure.ai.documentintelligence import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 from get_jawaban_himpunan import get_jawaban_himpunan
 
-# Inisialisasi klien
+# Initialize client
 client = DocumentAnalysisClient(
     endpoint="YOUR_ENDPOINT",
     credential=AzureKeyCredential("YOUR_API_KEY")
 )
 
-# Analisis dokumen
+# Analyze document
 poller = client.begin_analyze_document("prebuilt-document", "sample.pdf")
 result = poller.result()
 
-# Cetak hasil ekstraksi teks
+# Print text extraction results
 for page in result.pages:
     print(page.lines)
 
-# Deteksi jawaban
-jawaban = get_jawaban_himpunan("answer-sheet.pdf")
-print("Jawaban siswa:", jawaban)
+# Detect answers
+answers = get_jawaban_himpunan("answer-sheet.pdf")
+print("Student answers:", answers)
 ```
 
 ---
 
 ## 🤝 Contributing
 
-1. Fork repositori ini.
-2. Buat branch baru: `git checkout -b fitur-baru`
-3. Commit perubahan Anda: `git commit -m "Menambahkan fitur baru"`
-4. Push ke branch Anda: `git push origin fitur-baru`
-5. Buka Pull Request.
+1. Fork this repository.
+2. Create a new branch: `git checkout -b new-feature`
+3. Commit your changes: `git commit -m "Add new feature"`
+4. Push to your branch: `git push origin new-feature`
+5. Open a Pull Request.
 
 ---
 
 ## 📄 License
 
-Proyek ini dilisensikan di bawah MIT License.
-Lihat file [LICENSE](LICENSE) untuk detail.
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
 ```
